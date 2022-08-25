@@ -1,0 +1,37 @@
+﻿@page
+@model CamViewV2.Pages.ContactModel
+@{
+}
+@{
+    ViewData["Title"] = "Contact Us";
+}
+<h1>@ViewData["Title"]</h1>
+<hr />
+<br/>
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" asp-page="Contact">
+            <div class="mb-3">
+                <label asp-for="NewCustomer.FirstName">First Name</label>
+                <input asp-for="NewCustomer.FirstName" class="form-control"/>
+            </div> 
+            <div class="mb-3">
+                <label asp-for="NewCustomer.LastName">Last Name</label>
+                <input asp-for="NewCustomer.LastName" class="form-control"/>
+            </div> 
+            <div class="mb-3">
+                <label asp-for="NewCustomer.EmailAddress">Email</label>
+                <input asp-for="NewCustomer.EmailAddress" class="form-control"/>
+            </div> 
+            <div class="mb-3">
+                <label asp-for="NewCustomer.PhoneNumber">Telephone Number</label>
+                <input asp-for="NewCustomer.PhoneNumber" class="form-control"/>
+            </div> 
+            <div class="mb-3">
+                <label asp-for="NewCustomer.Comments">Comments</label>
+                <textarea asp-for="NewCustomer.Comments" class="form-control"></textarea>
+            </div> 
+            <button class="btn btn-danger">Submit</button>
+        </form>
+    </div>
+</div>

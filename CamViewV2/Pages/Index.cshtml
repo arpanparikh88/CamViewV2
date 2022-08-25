@@ -1,0 +1,95 @@
+﻿@page
+@model Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="hero-container">
+
+    <img class="logo" src="images/logo.png" alt="">
+
+    <div class="play">
+        <p>What we do in ninety seconds</p>
+        <a href="https://drive.google.com/file/d/1tXpBkpNmY5Y7VNVws0_8GBiJEr-jIZTZ/preview" target="_self" rel="modal:open">
+            <img src="images/play-min.png" alt="">
+        </a>
+        @*<button onclick="displayIframe()">
+            <img src="images/play-min.png" alt="">
+        </button>
+        <div id="IFrameDisplay"></div>*@
+        
+    </div>
+</div>
+
+<main>
+    <section>
+        <h3> Live Guard Tech</h3>
+        <p>Welcome to the security systems of LIVE GUARD TECH with a 98% real succes rate over the past six years. We are the most cost effective and reliable proactive crime-vandalism deterrent service in the market today - We offer:</p>
+        <div class="card-container">
+            <div class="card">
+                    <div class="card-title">
+                        <h2>ROBO SUPER SECURITY</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Live Guard Tech systems will deter theft and vandalism before they occur with:</p>
+                        <ul>
+                            <li>LIVE CAMERA SURVEILLANCE</li>
+                            <li>THE NEWEST TECHNOLOGY</li>
+                            <li>POLICE STROBE LIGHTS</li>
+                            <li>BI-DIRECTIONAL COMMUNICATION</li>
+                        </ul>
+                        <p>If our monitoring officer is unable to deter the intruder, they will immediately contact a local law enforcement agent. The police will consider the crime in progress as a level 1 priority. This improvesthe chances of catching the perpetrator by a factor 10X. Nothing deters more than a security presence.</p>
+                    </div>
+                </div>
+            <div class="card card2">
+                    <div class="card-title">
+                        <h2>THEFT JUST BECAME MISSION IMPOSSIBLE</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Crossing a monitored area by LGT is virtually impossible because we have the most innovative live feed video streaming capabilities along with a highly trained human monitoring team.</p>
+                    </div>
+                </div>
+            <div class="card card3">
+                    <div class="card-title">
+                        <h2>TOTAL PERIMETER PROTECTION</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Our LGT systems detect movement through a network of cameras with a broad recording area to protect your property. Our systems work with the newest technology in conjunction with a trained monitoring team to prevent the breach of the perimeter. We have reliable, high quality equipment made in the USA with optional solar panels.</p>
+                    </div>
+                </div>
+            <div class="card card4">
+                <div class="card-title">
+                    <h2>INNOVATIVE TECHNOLOGY</h2>
+                </div>
+                <div class="card-body">
+                    <p>The newest live feed video stream technology allows us to have a quicker detection of the intruder. We are continuously updating our software with the newest technology to give you the best service.</p>
+                </div>
+            </div>
+            <div class="card card5">
+                <div class="card-title">
+                    <h2>MONITORING 24/7/365</h2>
+                </div>
+                <div class="card-body">
+                    <p>More eyes watching with a large, centralized, highly trained monitoring team and real time digital video streams, There is NO downtime. Our Monitoring Agents watch fewer cameras per agent than any other security company, which minimizes false-positive incidents.</p>
+                </div>
+            </div>
+            <div class="card card6">
+                <div class="card-title">
+                    <h2>WE OFFER A 30-DAY 100% SATISFACTION RISK FREE TRIAL</h2>
+                </div>
+                <div class="card-body">
+                    <p>We welcome the opportunity to demonstrate our concept and provide a comprehensive proposal to protect your property. Remember that it is not IF thieves or vandals will hit your site, it is WHEN, let us show you the difference our advanced proactive security service can make.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+@section Scripts {
+    <script type='text/javascript'>
+        function displayIframe() {
+            document.getElementById("IFrameDisplay").innerHTML =
+                "<iframe height=\"1200px\" width=\"1000px\" src=\"https://drive.google.com/file/d/1tXpBkpNmY5Y7VNVws0_8GBiJEr-jIZTZ/preview\"></iframe>";
+        }
+    </script>
+}
