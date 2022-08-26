@@ -1,0 +1,29 @@
+﻿.logo {
+    width: 70%;
+}
+
+.login-btn {
+    color: white;
+    background-color: #c80033;
+}
+
+.login-container {
+    background-position: center center;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 5%;
+    padding: 2rem 2rem 5rem 2rem;
+    position: absolute;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.background {
+    height: 90vh;
+    background-image: url(../images/ojo.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}

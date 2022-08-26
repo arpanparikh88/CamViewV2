@@ -3,6 +3,26 @@
 @{
     ViewData["Title"] = "Login";
 }
-<h1>@ViewData["Title"]</h1>
-
-<p>This is the Login page.</p>
+<div class="background">
+    <div class="login-container">
+        <div class="container">
+            <img src="images/logo.png" class="w-100 mb-3" alt="Logo"/>
+            <hr/>
+            <form method="post">
+                <div class="mb-3">
+                    @*<label class="form-label" asp-for="Login.Username">Username</label>*@
+                    <input type="text" class="form-control" asp-for="Login.Username" placeholder="Username"/>
+                    <span asp-validation-for="Login.Username" class="text-danger fw-bold"></span>
+                </div>
+                <div class="mb-4">
+                    @*<label class="form-label" asp-for="Login.Password">Password</label>*@
+                    <input type="password" class="form-control" asp-for="Login.Password" placeholder="Password"/>
+                    <span asp-validation-for="Login.Password" class="text-danger fw-bold"></span>
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn login-btn">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
