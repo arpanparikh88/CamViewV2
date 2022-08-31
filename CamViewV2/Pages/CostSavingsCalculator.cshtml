@@ -1,0 +1,33 @@
+﻿@page
+@model CamViewV2.Pages.CostSavingsCalculatorModel
+@{
+}
+
+
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="mb-3">
+        <label asp-for="Hours">Enter number of hours</label>
+        <input asp-for="Hours" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="NumberOfDays">Enter number of days</label>
+        <input asp-for="NumberOfDays" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="HourlyRate">Enter hourly rate</label>
+        <input asp-for="HourlyRate" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="NumberOfUnits">Number of LGT Units</label>
+        <select asp-for="NumberOfUnits" class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+    </div>
+    <button class="btn btn-success">Calculate Savings</button>
+    
+    <h2>@Model.ResultInfo</h2>
+</form>

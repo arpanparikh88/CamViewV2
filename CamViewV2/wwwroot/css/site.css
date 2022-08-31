@@ -24,36 +24,33 @@ body {
 }
 
 .logo {
-    display: inline;
-    width: 60%;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: -50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    margin-left: 420px;
+    margin-top: 150px;
+    width: 50%;
+    position: relative;
 }
-
-/*.backgroundimage {
-    height: 100vh;
-    background-image: url(../images/ojo.jpg);
-    background-size: cover;
-    text-align: center;
-}*/
 
 .hero-container {
     background-image: url(../images/ojo.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
-    /*display: flex;
-    flex-direction: column;
-    position: relative;*/
 }
 
+.play p {
+    margin-left: 420px;
+    margin-top: 30px;
+    font-size: 4rem;
+    color: rgb(102, 3, 3);
+    font-weight: 500;
+    text-shadow: -2px 2px 10px #fff;
+}
+
+.play img {
+    margin-left: 800px;
+    padding-right: 100px;
+    width: 10%;
+}
 .constructionvideo {
     background-position: center;
     margin-left: 10%;
@@ -67,9 +64,6 @@ body {
     background-position: center;
     background-size: cover;
     height: 100vh;
-    /*display: flex;
-    flex-direction: column;
-    position: relative;*/
 }
 
 .gated-container {
@@ -118,26 +112,6 @@ body {
     height: 75vh;
 }
 
-.play {
-    margin-top: -50%;
-    display: inline;
-    text-align: center;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-    .play img {
-        /*margin-top: -150%;*/
-        width: 10%;
-        position: relative;
-        text-align: center;
-       /* top: 50%;
-        left: 50%;*/
-       /* transform: translate(-50%, -50%);*/
-    }
 
 .play img:hover {
     transition-duration: .4s;
@@ -145,13 +119,7 @@ body {
     cursor: pointer;
 }
 
-.play p {
-    margin-top: -80%;
-    font-size: 4rem;
-    color: rgb(102, 3, 3);
-    font-weight: 300;
-    text-shadow: -2px 2px 10px #fff;
-}
+
 
 button {
     background: white;
@@ -167,16 +135,37 @@ button {
     text-align: center;
 }
 
+.bodytext h3{
+    margin-top: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.bodytext p {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+}
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    /*flex: 0 0 100%;*/
-    transition: 0.3s;
-    width: 500px;
+    width: 800px;
     padding: 30px;
-    margin-top: 20px;
-    margin-right: 50px;
-    margin-bottom: 80px;
-    float: left;
+    margin-bottom: 30px;
+}
+
+.card-title {
+    color: #c80033;
+    text-align: center;
+    font-size: 15px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.testimonial {
+    width: 1700px;
 }
 
 .gated-card {
@@ -193,7 +182,6 @@ button {
 
 .construction-card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    /*flex: 0 0 100%;*/
     transition: 0.3s;
     width: 500px;
     padding: 30px;
@@ -203,75 +191,16 @@ button {
     float: left;
 }
 
-.card2 {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    flex: 0 0 100%;
-    transition: 0.3s;
-    width: 550px;
-    padding: 30px;
-    margin-right: 50px;
-    margin-bottom: 80px;
-    float: left;
-    height: 495px;
-}
-
-.card-title {
-    color: #c80033;
+#costsavingsbutton {
+    background-color: darkred;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    width: 80%;
+    border-radius: 15px;
+    font-size: 30px;
+    font-weight: 400;
     text-align: center;
-    font-size: 15px;
-}
-
-.card-body {
-    line-height: 20pt;
-}
-
-/*.card-wrap {
-    display: flex;
-    width: 400px;
-    float: left;
-}*/
-
-.card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.card2:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.card3 {
-    height: 390px;
-    width: 550px;
-}
-
-.card4 {
-    height: 390px;
-    width: 550px;
-}
-
-.card5 {
-    height: 390px;
-    width: 550px;
-}
-
-.card6 {
-    height: 390px;
-    width: 550px;
-}
-
-.comparison {
     display: grid;
-    width: 98%;
-    margin-bottom: 80px;
-    margin: 0 auto;
-    grid-gap: .5rem;
-}
-
-.comparetable {
-    background: #fff;
-    text-align: center;
-    height: 100%;
-    margin-top: 30px;
-    padding: 1.5rem;
-    border-collapse: collapse;
+    margin: auto;
 }
