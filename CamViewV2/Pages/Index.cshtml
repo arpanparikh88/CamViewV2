@@ -8,7 +8,8 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="hero-container">
+@*<div class="hero-container">
+    
 
     <img class="logo" src="images/logo.png" alt="">
 
@@ -21,10 +22,23 @@
             <img src="images/play-min.png" alt="">
         </button>
         <div id="IFrameDisplay"></div>*@
-        
-    </div>
-</div>
 
+
+<section>
+    @{
+        var services = await Orchard.GetContentItemByAliasAsync("alias:services");
+    }
+
+    <div class="parent">
+        <img class="bannerimage" src="@Orchard.AssetUrl((string)services.Content.Services.Banner.Paths[0])"/>
+        <img class="logo" src="@Orchard.AssetUrl((string)services.Content.Services.Banner.Paths[2])"/>
+        <p class="bannertext"> What we do in ninety seconds</p>
+        <a href="https://drive.google.com/file/d/1tXpBkpNmY5Y7VNVws0_8GBiJEr-jIZTZ/preview" target="_self" rel="modal:open">
+            <img class="playbutton" src="@Orchard.AssetUrl((string)services.Content.Services.Banner.Paths[3])">
+        </a>
+    </div>
+
+</section>
 <main>
     <section>
         <div class="bodytext">
@@ -40,10 +54,6 @@
         <div class="container">
             <br/>
             <div class="row">
-                @{
-                    var services = await Orchard.GetContentItemByAliasAsync("alias:services");              
-                }
-                
                 @foreach (var service in services.Content.BagPart.ContentItems)
                 {
                     <div class="col-lg-6 d-flex align-items-stretch">
@@ -63,7 +73,8 @@
     <section>
         <div class="row">
             <div class="col-md-6">
-                <img class="testimonial" src="images/Testimonial1.png"/>
+                <img class="testimonial"
+                     src="@Orchard.AssetUrl((string)services.Content.Services.Banner.Paths[1])"/>
              </div>
         </div>
     </section>

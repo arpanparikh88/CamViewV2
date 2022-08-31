@@ -23,27 +23,50 @@ body {
     position: absolute;
 }
 
-.logo {
-    margin-left: 420px;
-    margin-top: 150px;
-    width: 50%;
+.parent {
     position: relative;
+    top: 0;
+    left: 0;
 }
 
-.hero-container {
-    background-image: url(../images/ojo.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+.bannerimage {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 115vh;
+    width: 100%;
 }
 
-.play p {
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    margin-top: 200px;
     margin-left: 420px;
-    margin-top: 30px;
-    font-size: 4rem;
-    color: rgb(102, 3, 3);
-    font-weight: 500;
+    width: 50%;
+}
+
+.bannertext {
+    position: absolute;
+    color: darkred;
+    font-size: 70px;
+    font-weight: 400;
+    top: 500px;
+    left: 425px;
     text-shadow: -2px 2px 10px #fff;
+}
+
+.playbutton {
+    position: absolute;
+    top: 600px;
+    left: 800px;
+    width: 100px;
+}
+
+.playbutton:hover {
+    transition-duration: .4s;
+    transform: scale(1.3);
+    cursor: pointer;
 }
 
 .play img {
