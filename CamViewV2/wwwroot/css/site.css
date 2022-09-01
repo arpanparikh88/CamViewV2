@@ -69,11 +69,6 @@ body {
     cursor: pointer;
 }
 
-.play img {
-    margin-left: 800px;
-    padding-right: 100px;
-    width: 10%;
-}
 .constructionvideo {
     background-position: center;
     margin-left: 10%;
@@ -226,4 +221,27 @@ button {
     text-align: center;
     display: grid;
     margin: auto;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
+}
+
+.menu li {
+    display: inline-block;
+    list-style-type: none;
+    font-size: 20px;
+    margin-right: 10px;
+    padding-bottom: 2px;
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.menu li a {
+    color: black;
 }

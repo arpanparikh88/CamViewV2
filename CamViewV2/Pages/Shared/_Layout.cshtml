@@ -1,4 +1,5 @@
 ﻿@using OrchardCore
+@inherits OrchardCore.DisplayManagement.Razor.RazorPage<TModel>
 @inject IOrchardHelper Orchard
 
 <!DOCTYPE html>
@@ -21,7 +22,12 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <menu id="menuitem" alias="alias:main-menu" cache-id="main-menu" cache-fixed-duration="00:05:00" cache-tag="alias:main-menu">
+
+                    </menu>
+
+                    
+                    @*<ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-page="/Index">Home</a>
                         </li>
@@ -46,7 +52,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-page="/LoginLGT">Login</a>
                         </li>
-                    </ul>
+                    </ul>*@
                 </div>
             </div>
         </nav>

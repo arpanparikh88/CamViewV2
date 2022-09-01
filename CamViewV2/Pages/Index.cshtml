@@ -8,22 +8,6 @@
     ViewData["Title"] = "Home page";
 }
 
-@*<div class="hero-container">
-    
-
-    <img class="logo" src="images/logo.png" alt="">
-
-    <div class="play">
-        <p> What we do in ninety seconds</p>
-        <a href="https://drive.google.com/file/d/1tXpBkpNmY5Y7VNVws0_8GBiJEr-jIZTZ/preview" target="_self" rel="modal:open">
-            <img src="images/play-min.png" alt="">
-        </a>
-        @*<button onclick="displayIframe()">
-            <img src="images/play-min.png" alt="">
-        </button>
-        <div id="IFrameDisplay"></div>*@
-
-
 <section>
     @{
         var services = await Orchard.GetContentItemByAliasAsync("alias:services");
@@ -83,7 +67,7 @@
     
 
 </main>
-@section Scripts {
+@*@section Scripts {
     <script type='text/javascript'>
         function displayIframe() {
             document.getElementById("IFrameDisplay").innerHTML =
@@ -91,3 +75,4 @@
         }
     </script>
 }
+*@
