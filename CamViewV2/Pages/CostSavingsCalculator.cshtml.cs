@@ -1,8 +1,6 @@
 using System.ComponentModel.DataAnnotations;
-using Lucene.Net.Util.Fst;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using OrchardCore.ContentFields.Fields;
 
 namespace CamViewV2.Pages
 {
@@ -55,6 +53,12 @@ namespace CamViewV2.Pages
             }
 
             return Page();
+        }
+
+        public void OnClick()
+        {
+            Console.WriteLine("Clicked");
+
         }
     }
 }

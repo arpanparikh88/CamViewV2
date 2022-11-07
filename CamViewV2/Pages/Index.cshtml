@@ -1,78 +1,142 @@
-﻿@page
-@using OrchardCore
-@model Pages.IndexModel
-@inject IOrchardHelper Orchard
+﻿@page 
+@using OrchardCore.Menu.TagHelpers
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model CamViewV2.Pages.IndexModel
+@inherits OrchardCore.DisplayManagement.RazorPages.Page
 
 @{
     //Layout = "Shared/_Layout";
     ViewData["Title"] = "Home page";
 }
 
+<header>
+        <nav id="navbar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+            <div class="container">
+                <a class="navbar-brand" asp-page="/Index">LiveGuardTech</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <menu id="menuitem" alias="alias:main-menu" cache-id="main-menu" cache-fixed-duration="00:05:00" cache-tag="alias:main-menu">
+
+                    </menu>
+                </div>
+            </div>
+        </nav>
+    </header>
 <section>
     @{
         var services = await Orchard.GetContentItemByAliasAsync("alias:services");
     }
-
     <div class="parent">
-        <img class="bannerimage" src="@Orchard.AssetUrl((string)services.Content.Services.Banner.Paths[0])"/>
-        <img class="logo" src="@Orchard.AssetUrl((string)services.Content.Services.Banner.Paths[2])"/>
+        <img class="bannerimage" asset-src="@((string)services.Content.Services.Banner.Paths[0])"/>
+        <img class="logo" asset-src="@((string)services.Content.Services.Banner.Paths[2])"/>
         <p class="bannertext"> What we do in ninety seconds</p>
-        <a href="https://drive.google.com/file/d/1tXpBkpNmY5Y7VNVws0_8GBiJEr-jIZTZ/preview" target="_self" rel="modal:open">
-            <img class="playbutton" src="@Orchard.AssetUrl((string)services.Content.Services.Banner.Paths[3])">
+        <a href="https://drive.google.com/file/d/1tXpBkpNmY5Y7VNVws0_8GBiJEr-jIZTZ/preview">
+            <img class="playbutton" asset-src="@((string)services.Content.Services.Banner.Paths[3])" />
         </a>
     </div>
 
 </section>
+
+<div data-spy="scroll" data-target="#navbar" data-offset="0">
 <main>
-    <section>
-        <div class="bodytext">
-            @{
-                var companyHeading = await Orchard.GetContentItemByIdAsync("4vyqpgpgs8dr511e4zkbbd3pwj");
-            }
-            <h3>@companyHeading</h3>
-            @{
-                var heading = await Orchard.GetContentItemByIdAsync("441a7r6k4b0e870418gp06fhnb");
-            }
-            <p> @heading </p>
-        </div>
-        <div class="container">
-            <br/>
-            <div class="row">
-                @foreach (var service in services.Content.BagPart.ContentItems)
-                {
-                    <div class="col-lg-6 d-flex align-items-stretch">
-                        <div class="card">
-                            <div class="card-title">
-                                <h2>@service.DisplayText</h2>
-                            </div>
-                            <div class="card-body">
-                                @Html.Raw(service.HtmlBodyPart.Html)
-                            </div>
+<section>
+    <div class="bodytext">
+        @{
+            var companyHeading = await Orchard.GetContentItemByIdAsync("4vyqpgpgs8dr511e4zkbbd3pwj");
+        }
+        <h3>@companyHeading</h3>
+        @{
+            var heading = await Orchard.GetContentItemByIdAsync("441a7r6k4b0e870418gp06fhnb");
+        }
+        <p> @heading </p>
+    </div>
+    <div class="container">
+        <br/>
+        <div class="row">
+            @foreach (var service in services.Content.BagPart.ContentItems)
+            {
+                <div class="col-lg-6 d-flex align-items-stretch">
+                    <div class="card">
+                        <div class="card-title">
+                            <h2 id="Solutions">@service.DisplayText</h2>
+                        </div>
+                        <div class="card-body">
+                            @Html.Raw(service.HtmlBodyPart.Html)
                         </div>
                     </div>
-                }
+                </div>
+            }
+        </div>
+    </div>
+</section>
+    <section>
+    <div class="solutionsMenuButtons" role="group">
+        <input type="button" class="btn btn-secondary btn-danger" id="constructionButton" value="Construction" onclick="$('#myCarousel').carousel(0);"/>
+        <input type="button" class="btn btn-secondary" id="communitiesButton" value="Gated Communities" onclick="$('#myCarousel').carousel(1);"/>
+        <input type="button" class="btn btn-secondary" id="commercialButton" value="Commercial Properties" onclick="$('#myCarousel').carousel(2);"/>
+        <input type="button" class="btn btn-secondary" id="industrialButton" value="Industrial" onclick="$('#myCarousel').carousel(3);"/>
+        <input type="button" class="btn btn-secondary" id="carDealershipButton" value="Car Dealerships" onclick="$('#myCarousel').carousel(4);"/>
+    </div>
+    <div id="myCarousel" class="carousel">
+        <div class="carousel carousel-inner">
+            <div class="carousel carousel-item active">
+                <partial name="ConstructionView"/>
+            </div>
+            <div class="carousel-item">
+                <partial name="GatedCommunitiesView"/>
+            </div>
+            <div class="carousel-item">
+                <partial name="CommercialView"/>
+            </div>
+            <div class="carousel-item">
+                <partial name="IndustrialView"/>
+            </div>
+            <div class="carousel-item">
+                <partial name="CarDealershipView"/>
             </div>
         </div>
-    </section>
-    <section>
-        <div class="row">
-            <div class="col-md-6">
-                <img class="testimonial"
-                     src="@Orchard.AssetUrl((string)services.Content.Services.Banner.Paths[1])"/>
-             </div>
-        </div>
-    </section>
-    
-    <a id="costsavingsbutton" asp-page="/CostSavingsCalculator">Click to see how much you can $AVE!</a>
-    
+        
+        
+        @* <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>*@
+    </div>
+</section>
+<section>
+    <div class="testimonial">
+        <img class="testimonialImage" asset-src="@((string)services.Content.Services.Banner.Paths[1])" alt="Testimonial"/>
+        
+    </div>
+</section>
+<section>
+    @{
+        var form = await Orchard.GetContentItemByAliasAsync(alias:"alias:contact");
+    }
+</section>
 
-</main>
-@*@section Scripts {
-    <script type='text/javascript'>
-        function displayIframe() {
-            document.getElementById("IFrameDisplay").innerHTML =
-                "<iframe height=\"1200px\" width=\"1000px\" src=\"https://drive.google.com/file/d/1tXpBkpNmY5Y7VNVws0_8GBiJEr-jIZTZ/preview\"></iframe>";
-        }
-    </script>
-}
+<div class="container">
+    <div class="col-lg-12 d-flex align-items-stretch" id="Contact">
+        <div class="row" id="contactform">
+            <div class="card align-content-center">
+                @await Orchard.DisplayAsync(form)
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="center">UTILIZE OUR COMPARISON TABLE</h2>
+
+<partial name="TableView"/>
+
+@*<a id="costsavingsbutton" asp-page="/CostSavingsCalculator">Click to see how much you can $AVE!</a>
 *@
+</main>
+</div>
+
+

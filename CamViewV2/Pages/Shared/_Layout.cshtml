@@ -1,7 +1,6 @@
 ﻿@using OrchardCore
-@inherits OrchardCore.DisplayManagement.Razor.RazorPage<TModel>
 @inject IOrchardHelper Orchard
-
+@await RenderSectionAsync("Styles", required: false)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,71 +8,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - LiveGuardTech</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/CamViewV2.styles.css" asp-append-version="true" />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">LiveGuardTech</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <menu id="menuitem" alias="alias:main-menu" cache-id="main-menu" cache-fixed-duration="00:05:00" cache-tag="alias:main-menu">
+<div @*class="container"*@>
+    <main role="main">
+        @RenderBody()
+    </main>
+</div>
 
-                    </menu>
+@{
+    var icons = await Orchard.GetContentItemByAliasAsync("alias:appicon");
+}
 
-                    
-                    @*<ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Solutions
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                <li><a class="dropdown-item" asp-page="/solutions/construction">Construction</a></li>
-                                <li><a class="dropdown-item" asp-page="/solutions/gatedcommunities">Gated Communities</a></li>
-                                <li><a class="dropdown-item" asp-page="/solutions/commercialproperties">Commercial Properties</a></li>
-                                <li><a class="dropdown-item" asp-page="/solutions/industrial">Industrial</a></li>
-                                <li><a class="dropdown-item" asp-page="/solutions/cardealerships">Car Dealerships</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/Contact">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/CamView">CamView</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/LoginLGT">Login</a>
-                        </li>
-                    </ul>*@
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div @*class="container"*@>
-        <main role="main">
-            @RenderBody()
-        </main>
+<footer id="footer" class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2022 - LiveGuardTech - <a asp-page="/Privacy">Privacy</a>
     </div>
-
-    <footer id="footer" class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - LiveGuardTech - <a asp-page="/Privacy">Privacy</a>
-        </div>
+    @*<div>
+        <a href="https://drive.google.com/file/d/1tXpBkpNmY5Y7VNVws0_8GBiJEr-jIZTZ/preview" target="_self" rel="modal:open">
+            <img asset-src="@((string)icons.Content.AppIcon.Icon.Paths[0])"  />
+        </a>
+    </div>*@
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    
-    <partial name="_ValidationScriptsPartial" />
-    @await RenderSectionAsync("Scripts", required: false)
+<partial name="_ValidationScriptsPartial" />
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 3,
+        initialSlide: 1,
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+</script>
+
+@await RenderSectionAsync("Scripts", required: false)
+
+
 </body>
 </html>

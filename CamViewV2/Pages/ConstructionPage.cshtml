@@ -1,0 +1,30 @@
+﻿@page
+@model CamViewV2.Pages.IndexModel
+@{
+}
+
+<h1>Hello from Construction Page</h1>
+
+
+<div id="solutionzone" class="carousel-item active">
+    <img asset-src="@((string)Model.Solutions.Content.Solutions.SolutionBanner.Paths[0])"
+         class="d-block w-100" alt="Construction"/>
+    <video class="solutionvideo"
+           src="@Url.Content("/videos/const-1.mp4")" controls="controls">
+    </video>
+    <div id="solutioncard" class="row">
+        @foreach (var constructionService in Model.ConstructionServices.Content.BagPart.ContentItems)
+        {
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-title">
+                        <h2>@constructionService.DisplayText</h2>
+                    </div>
+                    <div class="card-body">
+                        @Html.Raw(constructionService.HtmlBodyPart.Html)
+                    </div>
+                </div>
+            </div>
+        }
+    </div> 
+</div>

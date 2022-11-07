@@ -1,14 +1,32 @@
 ﻿@page 
+@using OrchardCore
 @model CamViewV2.Pages.ContactModel
+@inject IOrchardHelper OrchardHelper
 @{
 }
 @{
-    ViewData["Title"] = "Contact Us";
+    var contactForm = await OrchardHelper.GetContentItemByAliasAsync("alias:contact");
 }
-<h1>@ViewData["Title"]</h1>
-<hr />
-<br/>
+
+@*<div>
+    @contactForm.Content
+
+    @contactForm.ContentItem
+</div>
 <div class="row">
+    @foreach (var contactItem in contactForm.Content.FlowPart.Widgets)
+    {
+        <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="card">
+                <div class="card-body">
+                    @Html.Raw(contactItem.InputPart)
+                </div>
+            </div>
+        </div>
+    }
+</div>*@
+
+@*<div class="row">
     <div class="col-md-6">
         <form method="post" asp-page="Contact">
             <div class="mb-3">
@@ -34,4 +52,4 @@
             <button class="btn btn-danger">Submit</button>
         </form>
     </div>
-</div>
+</div>*@

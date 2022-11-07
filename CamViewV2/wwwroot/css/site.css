@@ -8,13 +8,13 @@ html {
   }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
   margin-bottom: 60px;
+    /* margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;*/
 }
 
 .constructionimage {
@@ -31,35 +31,34 @@ body {
 
 .bannerimage {
     position: relative;
-    top: 0;
-    left: 0;
-    height: 115vh;
+    height: 125vh;
     width: 100%;
+    z-index: 0;
 }
+
 
 .logo {
     position: absolute;
-    top: 30px;
-    left: 30px;
-    margin-top: 200px;
-    margin-left: 420px;
-    width: 50%;
+    top: 10%;
+    left: 25%;
+    width: 60%;
 }
 
 .bannertext {
-    position: absolute;
     color: darkred;
     font-size: 70px;
     font-weight: 400;
-    top: 500px;
-    left: 425px;
+    top: 45%;
+    left: 25%;
     text-shadow: -2px 2px 10px #fff;
+    position: absolute;
+    text-align: center;
 }
 
 .playbutton {
     position: absolute;
-    top: 600px;
-    left: 800px;
+    top: 55%;
+    left: 47%;
     width: 100px;
 }
 
@@ -69,12 +68,16 @@ body {
     cursor: pointer;
 }
 
-.constructionvideo {
-    background-position: center;
-    margin-left: 10%;
+.solutionzone {
     position: relative;
-    height: 100vh;
-    width: 150vh;
+    top: 0;
+    left: 0;
+}
+.solutionvideo {
+    position: absolute;
+    top: 30px;
+    margin-left: 350px;
+    width: 100vh;
 }
 
 .construction-container {
@@ -182,8 +185,11 @@ button {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.testimonial {
-    width: 1700px;
+
+.testimonialImage {
+    display: block;
+    margin: 0 auto;
+    width: 1500px;
 }
 
 .gated-card {
@@ -244,4 +250,180 @@ a:link {
 
 .menu li a {
     color: black;
+}
+
+#contactform {
+    margin-left: 180px;
+}
+
+.table1 td {
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+input[type=number]{
+    background-color: darkred;
+    border-style: none;
+    color: white;
+    font-size: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input {
+    caret-color: transparent;
+    text-align: center;
+}
+
+.ck-button {
+    position: relative;
+    margin-left: 10%;
+    background-color: #EFEFEF;
+    border-radius: 1px;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 10%;
+}
+
+.ck-button label span {
+    text-align: center;
+    font-size: 15pt;
+    height: auto;
+    padding: 10px 0px;
+    display: block;
+    color: black;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='darkred' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='darkred' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+.field-name-contact-form-title {
+    text-align: center;
+    color: #c80033;
+    font-size: 45px;
+}
+
+.solutionsMenuButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 40px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#constructionButton {
+    margin-right: 10px;
+}
+
+#communitiesButton {
+    margin-right: 10px;
+}
+
+#commercialButton {
+    margin-right: 10px;
+}
+
+#industrialButton {
+    margin-right: 10px;
+}
+
+.btn-solutions-active {
+    color: white;
+    background-color: darkred;
+}
+
+.btn-solutions {
+    color: white;
+    background-color: black;
+}
+
+#Phone {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    border: 1px solid lightgray;
+}
+
+button.btn.btn-primary {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+}
+
+.constImage {
+    z-index: -1;
+    width: 100%;
+    height: 75vh;
+}
+
+.savingsTable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.patrolTable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*SWIPER BEGIN*/
+.swiper {
+    height: 75vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide {
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide video {
+    display: block;
+    margin-top: 150px;
+    width: 100%;
+}
+
+.solutionsImage {
+    position: absolute;
+    z-index: 0;
+    height: 120vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.solutionsVideo {
+    position: absolute;
+    z-index: 1;
+}
+
+#solutioncard .card {
+    margin-top: 25px;
 }

@@ -1,0 +1,19 @@
+﻿@page "/contactform/{id}"
+@*@model CamViewV2.Pages.ContactFormModel*@
+@*@inject IOrchardHelper Orchard
+
+
+@{
+    var form = await Orchard.GetContentItemByIdAsync(Id);
+}
+
+<h5>This is the contact form: @form.Content</h5>
+
+@Orchard.ConsoleLog(form);
+
+@functions{
+    [FromRoute]
+    public string? Id { get; set; }
+}
+*@
+

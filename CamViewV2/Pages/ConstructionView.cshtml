@@ -1,0 +1,37 @@
+﻿@model CamViewV2.Pages.IndexModel
+
+@*<video class="solutionvideo"
+           src="@Url.Content("/videos/const-1.mp4")" controls="controls">
+    </video>*@
+
+<div class="swiper mySwiper">
+    <img asset-src="@((string)Model.Solutions.Content.Solutions.SolutionBanner.Paths[0])"
+         class="solutionsImage" alt="Car Dealerships"/>
+    <div class="swiper-wrapper solutionsVideo">
+        <div class="swiper-slide">
+            <video src="videos/const-1.mp4" controls="controls"></video>
+        </div>
+        <div class="swiper-slide">
+            <video class="secondVideo" src="videos/const-1.mp4" controls="controls"></video>
+        </div>
+        <div class="swiper-slide">
+            <video class="thirdVideo" src="videos/const-1.mp4" controls="controls"></video>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+    <div id="solutioncard" class="row">
+        @foreach (var constructionService in Model.ConstructionServices.Content.BagPart.ContentItems)
+        {
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-title">
+                        <h2>@constructionService.DisplayText</h2>
+                    </div>
+                    <div class="card-body">
+                        @Html.Raw(constructionService.HtmlBodyPart.Html)
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
